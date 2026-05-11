@@ -1,0 +1,95 @@
+.card {
+  background: linear-gradient(180deg, #f4f4f4 0%, #ffffff 100%);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 10px;
+  box-shadow:
+    0 4px 16px rgba(0,60,120,0.2),
+    0 1px 0 rgba(255,255,255,0.6) inset;
+  padding: 20px 24px;
+  width: 100%;
+  max-width: 560px;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #01253e;
+  margin: 0 0 14px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0,100,160,0.15);
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.444);
+}
+
+li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.taskText {
+  flex: 1;
+  margin: 0 14px;
+  font-size: 15px;
+  color: #1a3a4a;
+  text-align: left;
+}
+
+.taskText.done {
+  text-decoration: line-through;
+  color: #88aabc;
+}
+
+.doneBtn {
+  background: linear-gradient(180deg,
+    #78e878 0%,
+    #3ac43a 40%,
+    #1a9a1a 100%
+  );
+  border-color: rgba(0,80,0,0.35);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.5);
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+.doneBtn:hover {
+  background: linear-gradient(180deg,
+    #88f088 0%,
+    #4ad44a 40%,
+    #2aaa2a 100%
+  );
+}
+
+.deleteBtn {
+  background: linear-gradient(180deg,
+    #f07070 0%,
+    #d03030 40%,
+    #b01010 100%
+  );
+  border-color: rgba(120,0,0,0.35);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.4);
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+.PHText {
+  font-size: 14px;
+  color: #7890a0;
+  font-style: italic;
+  margin-top: 12px;
+}
+
+.Remaining {
+  font-size: 12px;
+  color: #7890a0;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
