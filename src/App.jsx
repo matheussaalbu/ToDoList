@@ -1,23 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import TaskItem from './TaskItem.jsx'
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+  const saved = localStorage.getItem('tasks')
+  return saved ? JSON.parse(saved) : []
+})
   const [inputValue, setInputValue] = useState('')
   const activeTasks = tasks.filter(task => task.Done === false)
   const completedTasks = tasks.filter(task => task.Done === true)
 
   const addTask = (task) => {
-    if (task.trim() !== ''){
-      if (task.text === task.TaskItem) {
-        alert('Task already exists!')
-        return
-      }else
-        {setTasks([...tasks, {Text: task, Done: false}])
-        setInputValue('')
-    }}
+  if (task.trim() === '') return
+  const isDuplicate = tasks.some(t => t.Text.toLowerCase() === task.trim().toLowerCase())
+  if (isDuplicate) {
+    alert('Task already exists!')
+    return
   }
+  setTasks([...tasks, {Text: task, Done: false}])
+  setInputValue('')
+}
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
 
   return (
   <div>
